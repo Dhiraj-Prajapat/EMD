@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navigation" id="navigation">
+        <div class="back-btn" id="back-btn"><img src="./src/images/back-button.png" alt="back image"></div>
+        <div class="navigation-top">
+            <div>
+                <h2>Navigation</h2>
+            </div>
+            <a href="./animated-404-page-main/404page.html">Event Day's </a>
+            <a href="./animated-404-page-main/404page.html">Daily Task</a>
+            <a href="./animated-404-page-main/404page.html">Attendance</a>
+            <a href="./animated-404-page-main/404page.html">Salary transaction</a>
+        </div>
+        <div>
+            <a href="./animated-404-page-main/404page.html">Profile</a>
+            <a href="./animated-404-page-main/404page.html">Sign Out</a>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-box">
+            <div class="nav-item"><img src="./src/images/hamburger_button_icon.png" alt="" id="navigation-btn"></div>
+            <div>
+                <a href="./index.html"><h2>Employee Management Dashboard</h2></a>
+            </div>
+            <div class="nav-item"><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#addEmployeeModal">Add Employee</button></div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="container-fluid ">
+            <div class="row list">
+                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="img-box"><img src="./src/images/graph_13601356.png" class="card-img-top" alt="sales png"
+                            style="padding: 20px;"></div>
+                    <button class="btn btn-primary view-btn" type="button" data-department="Sales">View Details</button>
+                </div>
+                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <h5 class="card-title">Technical</h5>
+                    <div class="img-box"><img src="./src/images/cms-icon-compute.png" class="card-img-top"
+                            alt="sales png" style="opacity: 70%;"></div>
+                    <button class="btn btn-primary view-btn" type="button" data-department="Technical">View
+                        Details</button>
+                </div>
+                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <h5 class="card-title">Telecalling</h5>
+                    <div class="img-box"><img src="./src/images/telemarketer_1597175.png" class="card-img-top"
+                            alt="sales png">
+                    </div>
+                    <button class="btn btn-primary view-btn" type="button" data-department="Telecalling">View
+                        Details</button>
+                </div>
+                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <h5 class="card-title">Human Resource</h5>
+                    <div class="img-box"><img src="./src/images/hr-manager_7376276.png" class="card-img-top"
+                            alt="sales png"></div>
+                    <button class="btn btn-primary view-btn" type="button" data-department="HR">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addEmployeeForm" novalidate>
+                        <div class="mb-3">
+                            <label for="employeeName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="employeeName" required minlength="2">
+                            <div class="invalid-feedback" id="nameError">Please enter employee name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="employeeEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="employeeEmail" required>
+                            <div class="invalid-feedback" id="mailError">Please enter employee Email.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="employeeContact" class="form-label">Contact</label>
+                            <input type="tel" class="form-control" id="employeeContact" required pattern="^\d{10}$">
+                            <div class="invalid-feedback" id="contactError">Please enter employee contact number.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gender">Gender</label><br>
+                            <select name="gender" id="gender" class="form-select" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a gender.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="employeeSalary" class="form-label">Salary</label>
+                            <input type="number" class="form-control" id="employeeSalary" required>
+                            <div class="invalid-feedback" id="salaryError">Please enter a valid salary.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="employeeDepartment" class="form-label">Department</label>
+                            <select class="form-control" id="employeeDepartment" required>
+                                <option value="">Select Department</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Telecalling">Telecalling</option>
+                                <option value="HR">HR</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a department.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Employee</button>
+                        <button type="reset" class="btn btn-primary cancel-btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./src/JavaScript/main_index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const navigationBtn = document.getElementById("navigation-btn");
+        navigationBtn.addEventListener("click", () => {
+            
+        });
+    </script>
+</body>
+
+</html>
