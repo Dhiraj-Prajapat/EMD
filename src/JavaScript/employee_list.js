@@ -5,27 +5,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const employees = JSON.parse(localStorage.getItem(department)) || [];
     const tbody = document.getElementById('employee-table-body');
-
+    const loader = document.getElementById('loader');
+    const noData = document.getElementById('no-data');
 
 
     const renderEmployees = () => {
         tbody.innerHTML = '';
-        employees.forEach((employee, index) => {
-            const row = document.createElement('tr');
+        loader.style.display = 'block'; // it is for loader display
 
-            function genderImg() {
-                let img;
-                if (employee.gender === "male") {
-                    img = `https://avatar.iran.liara.run/public/boy?username=[${employee.name}]`;
-                } else if (employee.gender === "female") {
-                    img = `https://avatar.iran.liara.run/public/girl?username=[${employee.name}]`;
-                } else {
-                    img = `https://avatar.iran.liara.run/public/default?username=[${employee.name}]`; // Fallback image
-                }
-                return img;
-            }
+        setTimeout(() => { // Simulating a small delay for loader visibility
+            loader.style.display = 'none'; // Hide loader
+            if (employees.length === 0) {
+                noData.style.display = 'block'; // Show no data message
+            } else {
+                noData.style.display = 'none'; // Hide no data message
 
-            row.innerHTML = `
+                employees.forEach((employee, index) => {
+                    const row = document.createElement('tr');
+
+                    function genderImg() {
+                        let img;
+                        if (employee.gender === "male") {
+                            img = `https://avatar.iran.liara.run/public/boy?username=[${employee.name}]`;
+                        } else if (employee.gender === "female") {
+                            img = `https://avatar.iran.liara.run/public/girl?username=[${employee.name}]`;
+                        } else {
+                            img = `https://avatar.iran.liara.run/public/default?username=[${employee.name}]`; // Fallback image
+                        }
+                        return img;
+                    }
+
+                    row.innerHTML = `
                     
                     <td data-label="Profile"><img id="image" src="${genderImg()}" alt="Profile Image"></td>
                     <td data-label="Name">${employee.name}</td>
@@ -39,11 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     </td> 
                     
                 `;
-            tbody.appendChild(row);
+                    tbody.appendChild(row);
 
-        });
+                });
+            }
+        }, 2000);
     };
-
     renderEmployees();
 
     window.editEmployee = (index) => {

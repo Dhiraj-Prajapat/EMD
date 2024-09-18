@@ -114,6 +114,9 @@ addEmployeeForm.addEventListener('submit', function (event) {
   var myModalEl = document.getElementById('addEmployeeModal');
   var modal = bootstrap.Modal.getInstance(myModalEl);
   modal.hide();
+
+  updateEmployeeDataAnalysis();
+  
 });
 
 // Cancel button resets form and clears validation classes
@@ -133,3 +136,123 @@ document.querySelector('.cancel-btn').addEventListener('click', function () {
   salaryError.textContent = '';
   departmentError.textContent = '';
 });
+
+
+// navigation button logic
+document.addEventListener("DOMContentLoaded", function () {
+  
+  const navigationBtn = document.getElementById("navigation-btn");
+  const navigation = document.getElementById("navigation");
+  const backBtn = document.getElementById("back-btn");
+
+  function openNavigation() {
+      navigation.classList.add("show");  // Add the 'show' class to make the navigation visible
+  }
+
+  function closeNavigation() {
+      navigation.classList.remove("show");  // Remove the 'show' class to hide the navigation
+  }
+
+  navigationBtn.addEventListener("click", openNavigation);
+  backBtn.addEventListener("click", closeNavigation);
+});
+
+
+
+// graph logic 
+function getAllEmployeesFromLocalStorage() {
+  const departments = ["Sales", "Technical", "HR", "Telecalling"];
+  let allEmployees = [];
+
+  departments.forEach(department => {
+      const employeesData = localStorage.getItem(department);
+      if (employeesData) {
+          const employees = JSON.parse(employeesData);
+          allEmployees = allEmployees.concat(employees);
+      }
+  });
+
+  return allEmployees;
+}
+
+let employeeChart;  // Global chart variable
+
+function updateEmployeeDataAnalysis() {
+    const employees = getAllEmployeesFromLocalStorage();
+
+    // Update the analysis panel
+    const totalEmployees = employees.length;
+    const totalSalary = employees.reduce((sum, employee) => sum + parseFloat(employee.salary), 0);
+    const avgSalary = (totalSalary / totalEmployees).toFixed(2);
+
+    const genderCount = { male: 0, female: 0, other: 0 };
+    employees.forEach(employee => {
+        if (employee.gender === 'male') genderCount.male++;
+        else if (employee.gender === 'female') genderCount.female++;
+        else genderCount.other++;
+    });
+
+    const departmentCount = { Sales: 0, Technical: 0, Telecalling: 0, HR: 0, };
+    employees.forEach(employee => {
+        if (departmentCount[employee.department] !== undefined) {
+            departmentCount[employee.department]++;
+        }
+    });
+
+    // Update text data
+    document.getElementById('totalEmployeeCount').textContent = totalEmployees;
+    document.getElementById('totalSalary').textContent = totalSalary;
+    document.getElementById('genderData').textContent = `M: ${genderCount.male} | F: ${genderCount.female} | O: ${genderCount.other}`;
+    document.getElementById('departmentData').textContent = `Sales: ${departmentCount.Sales} | Tech: ${departmentCount.Technical} | Tele: ${departmentCount.Telecalling} | HR: ${departmentCount.HR}`;
+
+    // Chart data for employee distribution by department
+    const chartLabels = Object.keys(departmentCount);
+    const chartData = Object.values(departmentCount);
+
+    // If the chart already exists, destroy it to avoid duplication
+    if (employeeChart) {
+        employeeChart.destroy();
+    }
+
+    // Generate the chart
+    const ctx = document.getElementById('employeeChart').getContext('2d');
+    employeeChart = new Chart(ctx, {
+        type: 'bar', // You can also use 'bar', 'pie', 'line', etc.
+        data: {
+            labels: chartLabels,
+            datasets: [{
+                label: 'Employees by Department',
+                data: chartData,
+                
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Initialize data analysis and chart on page load
+document.addEventListener("DOMContentLoaded", updateEmployeeDataAnalysis);
+
+
+window.onload = function() {
+  updateEmployeeDataAnalysis();
+};

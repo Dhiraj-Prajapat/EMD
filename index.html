@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- navigation panel -->
     <div class="navigation" id="navigation">
         <div class="back-btn" id="back-btn"><img src="./src/images/back-button.png" alt="back image"></div>
         <div class="navigation-top">
@@ -27,15 +27,18 @@
         </div>
         <div>
             <a href="./animated-404-page-main/404page.html">Profile</a>
-            <a href="./animated-404-page-main/404page.html">Sign Out</a>
         </div>
     </div>
+
+    <!-- home page  -->
 
     <nav>
         <div class="nav-box">
             <div class="nav-item"><img src="./src/images/hamburger_button_icon.png" alt="" id="navigation-btn"></div>
             <div>
-                <a href="./index.html"><h2>Employee Management Dashboard</h2></a>
+                <a href="./index.html">
+                    <h2>Employee Management Dashboard</h2>
+                </a>
             </div>
             <div class="nav-item"><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
                     data-bs-target="#addEmployeeModal">Add Employee</button></div>
@@ -43,41 +46,82 @@
     </nav>
 
     <div class="main-container">
-        <div class="container-fluid ">
-            <div class="row list">
-                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <h5 class="card-title">Sales</h5>
-                    <div class="img-box"><img src="./src/images/graph_13601356.png" class="card-img-top" alt="sales png"
-                            style="padding: 20px;"></div>
-                    <button class="btn btn-primary view-btn" type="button" data-department="Sales">View Details</button>
-                </div>
-                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <h5 class="card-title">Technical</h5>
-                    <div class="img-box"><img src="./src/images/cms-icon-compute.png" class="card-img-top"
-                            alt="sales png" style="opacity: 70%;"></div>
-                    <button class="btn btn-primary view-btn" type="button" data-department="Technical">View
-                        Details</button>
-                </div>
-                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <h5 class="card-title">Telecalling</h5>
-                    <div class="img-box"><img src="./src/images/telemarketer_1597175.png" class="card-img-top"
-                            alt="sales png">
+        <!-- Employee Data Analysis Panel -->
+        <div class="analysis-container container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="data-card" id="totalEmployees">
+                        <h5>Total Employees</h5>
+                        <p id="totalEmployeeCount">0</p>
                     </div>
-                    <button class="btn btn-primary view-btn" type="button" data-department="Telecalling">View
-                        Details</button>
                 </div>
-                <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <h5 class="card-title">Human Resource</h5>
-                    <div class="img-box"><img src="./src/images/hr-manager_7376276.png" class="card-img-top"
-                            alt="sales png"></div>
-                    <button class="btn btn-primary view-btn" type="button" data-department="HR">View Details</button>
+                <div class="col-md-3">
+                    <div class="data-card" id="avgSalary">
+                        <h5>Average Salary</h5>
+                        <p id="totalSalary">0</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="data-card" id="genderDistribution">
+                        <h5>Gender Distribution</h5>
+                        <p id="genderData">M: 0 | F: 0 | O: 0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-card" id="departmentDistribution">
+                        <h5>Employees by Department</h5>
+                        <p id="departmentData">Sales: 0 | Tech: 0 | Tele: 0 | HR: 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- graph -->
+
+        <div class="container-fluid1 ">
+            <div class="canvas-parent">
+                <canvas id="employeeChart"></canvas>
+            </div>
+            <div class=" list">
+                <div class="main-cards">
+                    <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <h5 class="card-title">Sales</h5>
+                        <div class="img-box"><img src="./src/images/graph_13601356.png" class="card-img-top"
+                                alt="sales png" style="padding: 20px;"></div>
+                        <button class="btn btn-primary view-btn" type="button" data-department="Sales">View
+                            Details</button>
+                    </div>
+                    <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <h5 class="card-title">Technical</h5>
+                        <div class="img-box"><img src="./src/images/cms-icon-compute.png" class="card-img-top"
+                                alt="sales png" style="opacity: 70%;"></div>
+                        <button class="btn btn-primary view-btn" type="button" data-department="Technical">View
+                            Details</button>
+                    </div>
+                </div>
+                <div class="main-cards">
+                    <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <h5 class="card-title">Telecalling</h5>
+                        <div class="img-box"><img src="./src/images/telemarketer_1597175.png" class="card-img-top"
+                                alt="sales png">
+                        </div>
+                        <button class="btn btn-primary view-btn" type="button" data-department="Telecalling">View
+                            Details</button>
+                    </div>
+                    <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                        <h5 class="card-title">Human Resource</h5>
+                        <div class="img-box"><img src="./src/images/hr-manager_7376276.png" class="card-img-top"
+                                alt="sales png"></div>
+                        <button class="btn btn-primary view-btn" type="button" data-department="HR">View
+                            Details</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Add Employee Modal -->
-    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
+    <div class="modal fade main-model add-emp-box" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -136,6 +180,8 @@
         </div>
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -144,12 +190,7 @@
     <script>
         AOS.init();
     </script>
-    <script>
-        const navigationBtn = document.getElementById("navigation-btn");
-        navigationBtn.addEventListener("click", () => {
-            
-        });
-    </script>
+
 </body>
 
 </html>
