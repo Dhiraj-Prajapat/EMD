@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Neue Machina';
+    background-color: wheat;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* navigation bar start*/
+
+nav {
+    height: 11%;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav div h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-box :nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    width: 15%;
+    height: auto;
+}
+.nav-item svg {
+    margin-left: 15%;
+    z-index: -1
+}
+.nav-item button{
+    border: 1.5px solid orangered;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: #292929;
+    transform: scale(1.05);
+    transition-duration: 0.3s;
+}
+
+/* nav add employee button*/
+
+.orgButton {
+    background-color: #ffffff00;
+    color: #414141;
+    width: 9em;
+    height: 2.9em;
+    border: orangered 0.2em solid;
+    border-radius: 11px;
+    transition: all 0.6s ease;
+}
+
+.orgButton:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.btn-close {
+    --color: #0000002e;
+}
+
+/* nav add employee button end  */
+
+/* navigation panel start*/
+#navigation-btn {
+    cursor: pointer;
+}
+
+#navigation-btn:hover {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+}
+
+.navigation {
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(36, 36, 36, 0.936);
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: -275px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.4s ease;
+    backdrop-filter: blur(6px);
+    border-right: 2px solid orangered;
+}
+
+.navigation h2 {
+    color: #ff4500;
+}
+
+.navigation div {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation.show {
+    left: 0;
+}
+
+.navigation a {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.navigation a:hover {
+    border-bottom: 1px solid orangered;
+    border-right: 1px solid orangered;
+    border-radius: 5px;
+}
+
+.navigation-top div {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: -6.5%;
+    top: 47%;
+    background: #ffa500;
+    border: 1.5px solid orangered;
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+}
+
+.dropdown {
+    z-index: 0;
+}
+
+.dropdown-item {
+    color: black !important;
+}
+
+/* main container / home page  start*/
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    height: max-content;
+    padding: 0 10px;
+    padding-top: 20px;
+}
+
+/*emp analysis cards start*/
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1%;
+    padding: 0 15px;
+}
+
+.data-card {
+    color: #404040;
+    background-color: whitesmoke;
+    border: 1px solid orangered;
+    box-shadow: 0 4px 10px #00000033;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-card h5 {
+    font-size: 1.08rem;
+    margin-bottom: 5px;
+
+}
+
+.data-card p {
+    font-size: 1.10rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/*emp analysis cards end*/
+.container-fluid1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+canvas {
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+    /* max-width: 100%; */
+    border: 1px solid orangered;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.canvas-parent {
+    width: 60%;
+}
+
+.list {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main-cards {
+    display: flex;
+}
+.card {
+    height: 180px;
+    width: 180px;
+    margin: 0 10px;
+    background-color: #ffa500;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.475);
+    border: 1px solid orangered;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.5s;
+    z-index: 1;
+    overflow: hidden;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card button{
+    background-color: orangered;
+}
+.card button:hover{
+    background-color: rgb(255, 113, 62);
+}
+
+.img-box {
+    height: 70%;
+    width: 80%;
+}
+
+.card-title {
+    color: rgb(50, 50, 50);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid orangered;
+    border-radius: 12px;
+}
+
+.card .card-title {
+    width: 98%;
+    background-color: whitesmoke;
+    border: 1px solid orangered;
+    padding: 5px;
+    position: absolute;
+    top: 1%;
+    display: none;
+}
+.card:hover .card-title {
+    animation: up-down;
+    animation-duration: 450ms;
+    display: block;
+}
+@keyframes up-down {
+    0% { top: -20%;}
+    100% {top: 1%;}
+}
+
+.card .view-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    display: none;
+}
+.card:hover .view-btn {
+    animation: down-up;
+    animation-duration: 450ms;
+    display: block;
+}
+@keyframes down-up {
+    0% {bottom: -40%;}
+    100% {bottom: 0%;}
+}
+
+.add-emp-box {
+    background-color: #67676740;
+    backdrop-filter: blur(2px);
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.modal {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cancel-btn {
+    background-color: #fd4343;
+    border: 1px solid black;
+}
+
+.cancel-btn:hover {
+    background-color: #ff0202;
+}

@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url(../animated-404-page-main/assets/font/NeueMachina-Regular.woff);
+    font-weight: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+
+    background-color: #0d6efd;
+    padding: 10px 20px;
+    font-family: 'Neue Machina';
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.employee-data img {
+    height: 35px;
+    width: 35px;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.tbl-box {
+    margin: 20px auto;
+    width: 80%;
+    /* Adjust table width as needed */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+.avatar-th {
+    width: 10%;
+}
+
+.name-th {
+    width: 20%;
+}
+
+.contact-th {
+    width: 15%;
+}
+
+.salary-th {
+    width: 10%;
+}
+
+.action-th {
+    width: 12%;
+}
+
+.act-btn {
+    background-color: bisque;
+    display: none;
+}
+
+.employee-data tr {
+    width: 100%;
+}
+
+.employee-data tr:hover .act-btn {
+    display: block;
+}
+
+/*  no data*/
+
+.no-data {
+    text-align: center;
+    margin-top: 20px;
+    color: #d9534f;
+}
+/* no data end */
+
+@media (max-width: 1024px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .tbl-box {
+        width: 100%;
+    }
+
+    .avatar-th {
+        width: 10%;
+    }
+
+    .name-th {
+        width: 20%;
+    }
+
+    .contact-th {
+        width: 16%;
+    }
+
+    .salary-th {
+        width: 10%;
+    }
+
+    .action-th {
+        width: 14%;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .tbl-box {
+        width: 100%;
+    }
+
+    .avatar-th {
+        width: 7%;
+    }
+
+    .name-th {
+        width: 15%;
+    }
+
+    .contact-th {
+        width: 16%;
+    }
+
+    .salary-th {
+        width: 10%;
+    }
+
+    .action-th {
+        width: 14%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        width: 117% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 12px;
+        border: 2px solid #a5a5a5;
+        border-radius: 8px;
+        overflow-x: hidden;
+    }
+
+    table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    table tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+
+    table tbody td:last-child {
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .tbl-box {
+        width: 85%;
+    }
+
+    .employee-data img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+
+
+/* loader */
+
+.loader {
+    position: absolute;
+    display: none;
+    top: 45%;
+    left: 45%;
+    height: 40px;
+    aspect-ratio: 2;
+    border: 10px solid #ffffff;
+    box-sizing: border-box;
+    background: 
+      radial-gradient(farthest-side,#000000 90%,#fff) left/20px 20px,
+      radial-gradient(farthest-side,#000000 90%,#fff) left/20px 20px,
+      radial-gradient(farthest-side,#000000 90%,#fff) center/20px 20px,
+      radial-gradient(farthest-side,#000000 90%,#fff) right/20px 20px,
+      #000000;
+    background-repeat: no-repeat;
+    filter: blur(4px) contrast(10);
+    animation: l14 1s infinite;
+  }
+  @keyframes l14 {
+    100%  {background-position:right,left,center,right}
+  }
