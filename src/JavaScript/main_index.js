@@ -1,4 +1,4 @@
-document.querySelectorAll('.view-btn').forEach(button => {
+document.querySelectorAll('#viewBtn').forEach(button => {
   button.addEventListener('click', function () {
     const department = this.getAttribute('data-department');
     window.location.href = `src/employee_list.html?department=${department}`;
