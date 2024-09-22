@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'Neue Machina';
-    src: url(../animated-404-page-main/assets/font/NeueMachina-Regular.woff);
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Neue Machina';
-    src: url(../animated-404-page-main/assets/font/NeueMachina-Ultrabold.woff);
-    font-weight: bold;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -66,10 +54,12 @@ nav div h2 {
     width: 15%;
     height: auto;
 }
-
 .nav-item svg {
     margin-left: 15%;
     z-index: -1
+}
+.nav-item button{
+    border: 1.5px solid orangered;
 }
 
 nav a {
@@ -89,7 +79,7 @@ nav a:hover {
     background-color: #ffffff00;
     color: #414141;
     width: 9em;
-    height: 2.9em;
+    height: 2.3em;
     border: orangered 0.2em solid;
     border-radius: 11px;
     transition: all 0.6s ease;
@@ -104,9 +94,6 @@ nav a:hover {
     --color: #0000002e;
 }
 
-.cancel-btn {
-    --color: #ff4848;
-}
 /* nav add employee button end  */
 
 /* navigation panel start*/
@@ -122,7 +109,7 @@ nav a:hover {
 .navigation {
     height: 100vh;
     width: 250px;
-    background-color: rgba(36, 36, 36, 0.936);
+    background-color: rgba(49, 49, 49, 0.885);
     z-index: 20;
     position: fixed;
     top: 0;
@@ -207,12 +194,12 @@ nav a:hover {
 }
 
 /*emp analysis cards start*/
-
 .row{
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 50px;
+    column-gap: 1%;
+    padding: 0 15px;
 }
 
 .data-card {
@@ -289,9 +276,15 @@ canvas {
     z-index: 1;
     overflow: hidden;
 }
-
 .card:hover {
     transform: scale(1.05);
+}
+
+.card button{
+    background-color: orangered;
+}
+.card button:hover{
+    background-color: rgb(255, 113, 62);
 }
 
 .img-box {
@@ -301,7 +294,7 @@ canvas {
 
 .card-title {
     color: rgb(50, 50, 50);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     border: 1px solid orangered;
@@ -311,12 +304,12 @@ canvas {
 .card .card-title {
     width: 98%;
     background-color: whitesmoke;
+    border: 1px solid orangered;
     padding: 5px;
     position: absolute;
     top: 1%;
     display: none;
 }
-
 .card:hover .card-title {
     animation: up-down;
     animation-duration: 450ms;
@@ -326,13 +319,13 @@ canvas {
     0% { top: -20%;}
     100% {top: 1%;}
 }
+
 .card .view-btn {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 0%;
     display: none;
 }
-
 .card:hover .view-btn {
     animation: down-up;
     animation-duration: 450ms;
@@ -358,576 +351,9 @@ canvas {
 
 .cancel-btn {
     background-color: #fd4343;
+    border: 1px solid black;
 }
 
 .cancel-btn:hover {
     background-color: #ff0202;
-}
-
-@keyframes up-down {
-    0% {
-        top: -20%;
-    }
-    100% {
-        top: 2%;
-    }
-}
-
-@keyframes down-up {
-    0% {
-        bottom: -40%;
-    }
-
-    100% {
-        bottom: 2%;
-    }
-}
-
-.card-title {
-    color: rgb(50, 50, 50);
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid rgb(50, 50, 50);
-    border-radius: 5px;
-}
-
-.add-emp-box{
-    background-color: #67676740;
-    backdrop-filter: blur(2px);
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .card {
-        width: 30%;
-        height: 180px;
-    }
-
-    .list {
-        justify-content: space-between;
-    }
-
-    .main-container {
-        padding: 15px 20px;
-    }
-
-    .navigation {
-        width: 250px;
-        left: -285px;
-    }
-
-    .canvas-parent {
-        width: 60%;
-        margin-top: 20px;
-        margin-right: 10px;
-        justify-content: center;
-    }
-
-    .btn {
-        padding: 5px;
-        font-size: 15px;
-    }
-}
-
-
-@media (min-width: 768px) and (max-width: 991px) {
-    nav{
-        height: 55px;
-        justify-content: center;
-    }
-    .card {
-        width: 45%;
-        height: 160px;
-    }
-
-    .list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .main-container {
-        padding: 10px 0;
-    }
-
-    .navigation {
-        width: 250px;
-    }
-
-    .canvas-parent {
-        width: 60%;
-        margin-top: 20px;
-        margin-right: 10px;
-        justify-content: center;
-    }
-
-    .nav-item {
-        width: 20%;
-        margin-top: 3px;
-    }
-
-    .btn {
-        padding: 5px;
-        font-size: 13px;
-        margin: 0 !important;
-    }
-    .data-card{
-        padding: 5px !important;
-    }
-    .data-card h5 {
-        font-size: 0.90rem;
-        margin-bottom: 5px;
-    }
-
-    .row{
-        background-color: #fff;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    .data-card p {
-        font-size: 0.95rem;
-        font-weight: bold;
-        margin: 0;
-    }
-    .analysis-container{
-        padding: 0 0!important;
-    }
-    .col-md-2, .col-md-3, .col-md-4{
-        padding: 0 0 !important;
-    }
-    .col-md-3 .data-card{
-        padding: 5px 3px !important;
-    }
-}
-
-
-@media (max-width: 767px) {
-
-    /* Hide unnecessary elements */
-    nav div h2 {
-        display: none;
-    }
-
-    nav div img {
-        height: 20px;
-        width: 20px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    .main-container {
-        padding: 10px;
-    }
-
-    /* Cards */
-    .card {
-        width: 80%;
-        height: auto;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .back-btn {
-        left: 90%;
-        top: 50%;
-        padding: 5px;
-        height: 25px;
-        width: 25px;
-    }
-}
-
-
-/* iPhone 12 and iPhone 14 */
-@media (min-width: 390px) and (max-width: 844px) {
-
-    .main-container .analysis-container{
-        margin-top: 10px;
-    }
-    
-    .row .col-md-2, .col-md-3, .col-md-4{
-        margin-bottom: 10px;
-    }
-
-    .container-fluid1{
-        flex-direction: column-reverse;
-    }
-
-    .main-card{
-        width: 300px;
-        height: 300px;
-    }
-
-    .card {
-        width: 300px;
-        margin: 10px 0;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    nav div h2 {
-        display: none;
-        /* Hide large text */
-    }
-
-    nav div img {
-        height: 24px;
-        width: 24px;
-        /* Adjust logo size */
-    }
-
-    .main-container {
-        padding: 10px 20px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-        /* Navigation will slide out */
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    button {
-        width: 100%;
-        /* Ensure buttons are full width */
-    }
-
-    .data-card {
-        padding: 10px;
-    }
-}
-
-/* iPhone XR */
-@media (min-width: 414px) and (max-width: 896px) {
-    .card {
-        width: 100%;
-        /* Full width */
-        margin: 10px 0;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    nav div h2 {
-        display: none;
-        /* Adjust navbar for small screen */
-    }
-
-    nav div img {
-        height: 26px;
-        width: 26px;
-    }
-
-    .main-container {
-        padding: 10px 25px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .data-card {
-        padding: 15px;
-    }
-} */
-
-.add-emp-box{
-    background-color: #67676740;
-    backdrop-filter: blur(2px);
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .card {
-        width: 30%;
-        height: 180px;
-    }
-
-    .list {
-        justify-content: space-between;
-    }
-
-    .main-container {
-        padding: 15px 20px;
-    }
-
-    .navigation {
-        width: 250px;
-        left: -285px;
-    }
-
-    .canvas-parent {
-        width: 60%;
-        margin-top: 20px;
-        margin-right: 10px;
-        justify-content: center;
-    }
-
-    .btn {
-        padding: 5px;
-        font-size: 15px;
-    }
-}
-
-
-@media (min-width: 768px) and (max-width: 991px) {
-    nav {
-        height: 55px;
-        justify-content: center;
-    }
-
-    .card {
-        width: 45%;
-        height: 160px;
-    }
-
-    .list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .main-container {
-        padding: 10px 0;
-    }
-
-    .navigation {
-        width: 250px;
-    }
-
-    .canvas-parent {
-        width: 60%;
-        margin-top: 20px;
-        margin-right: 10px;
-        justify-content: center;
-    }
-
-    .nav-item {
-        width: 20%;
-        margin-top: 3px;
-    }
-
-    .btn {
-        padding: 5px;
-        font-size: 13px;
-        margin: 0 !important;
-    }
-
-    .data-card {
-        padding: 5px !important;
-    }
-
-    .data-card h5 {
-        font-size: 0.90rem;
-        margin-bottom: 5px;
-    }
-
-    .row {
-        background-color: #fff;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .data-card p {
-        font-size: 0.95rem;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    .analysis-container {
-        padding: 0 0 !important;
-    }
-
-    .col-md-2,
-    .col-md-3,
-    .col-md-4 {
-        padding: 0 0 !important;
-    }
-
-    .col-md-3 .data-card {
-        padding: 5px 3px !important;
-    }
-}
-
-
-@media (max-width: 767px) {
-
-    nav div h2 {
-        display: none;
-    }
-
-    nav div img {
-        height: 20px;
-        width: 20px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    .main-container {
-        padding: 10px;
-    }
-
-    /* Cards */
-    .card {
-        width: 80%;
-        height: auto;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .back-btn {
-        left: 90%;
-        top: 50%;
-        padding: 5px;
-        height: 25px;
-        width: 25px;
-    }
-}
-
-
-/* iPhone 12 and iPhone 14 */
-@media (min-width: 390px) and (max-width: 844px) {
-
-    .main-container .analysis-container {
-        margin-top: 10px;
-    }
-
-    .row .col-md-2,
-    .col-md-3,
-    .col-md-4 {
-        margin-bottom: 10px;
-    }
-
-    .container-fluid1 {
-        flex-direction: column-reverse;
-    }
-
-    .main-card {
-        width: 300px;
-        height: 300px;
-    }
-
-    .card {
-        width: 300px;
-        margin: 10px 0;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    nav div h2 {
-        display: none;
-    }
-
-    nav div img {
-        height: 24px;
-        width: 24px;
-    }
-
-    .main-container {
-        padding: 10px 20px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .data-card {
-        padding: 10px;
-    }
-}
-
-/* iPhone XR */
-@media (min-width: 414px) and (max-width: 896px) {
-    .card {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    nav div h2 {
-        display: none;
-    }
-
-    nav div img {
-        height: 26px;
-        width: 26px;
-    }
-
-    .main-container {
-        padding: 10px 25px;
-    }
-
-    .navigation {
-        width: 100vw;
-        left: -100vw;
-    }
-
-    .navigation.show {
-        left: 0;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .data-card {
-        padding: 15px;
-    }
 }
