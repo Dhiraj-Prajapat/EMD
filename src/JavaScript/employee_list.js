@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 });
             }
-        }, 2000);
+        }, 500);
     };
     renderEmployees();
 
@@ -107,3 +107,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 });
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}

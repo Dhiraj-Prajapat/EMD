@@ -33,11 +33,14 @@
             <a href="./animated-404-page-main/404page.html">Attendance</a>
             <a href="./animated-404-page-main/404page.html">Salary transaction</a>
             <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Employee Data</a>
+                <a class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Employee Data</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item " id="viewBtn" data-department="Sales" type="button">Sales Data</a></li>
-                    <li><a class="dropdown-item " id="viewBtn" data-department="Technical" type="button">Technical Data</a></li>
-                    <li><a class="dropdown-item " id="viewBtn" data-department="Telecalling" type="button">Telecalling Data</a></li>
+                    <li><a class="dropdown-item " id="viewBtn" data-department="Technical" type="button">Technical
+                            Data</a></li>
+                    <li><a class="dropdown-item " id="viewBtn" data-department="Telecalling" type="button">Telecalling
+                            Data</a></li>
                     <li><a class="dropdown-item " id="viewBtn" data-department="HR" type="button">HR Data</a></li>
                 </ul>
             </div>
@@ -49,9 +52,9 @@
 
     <!-- home page  -->
 
-    <nav>
+    <nav data-aos="fade-down">
         <div class="nav-box">
-            <div class="nav-item" >
+            <div class="nav-item">
                 <svg id="navigation-btn" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                     viewBox="0,0,255.99382,255.99382">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -88,14 +91,15 @@
         <!-- Employee Data Analysis Panel -->
         <div class="analysis-container container-fluid">
             <div class="row">
-                <div id="totalEmployees" class=" data-card div h-[5.5em] w-[16em] bg-white m-auto rounded-[1em] overflow-hidden relative group z-0">
+                <div data-aos="zoom-in" data-aos-duration="2000" id="totalEmployees"
+                    class=" data-card div h-[5.5em] w-[16em] bg-white m-auto rounded-[1em] overflow-hidden relative group z-0">
                     <div
                         class="circle absolute h-[5em] w-[5em] -top-[4em] -right-[4em] rounded-full bg-[#ffa500] group-hover:scale-[800%] duration-500 z-[-1] op">
                     </div>
                     <h5>Total Employees</h5>
                     <p id="totalEmployeeCount">0</p>
                 </div>
-                <div id="avgSalary"
+                <div data-aos="zoom-in" data-aos-duration="2000" id="avgSalary"
                     class=" data-card div h-[5.5em] w-[16em] bg-white m-auto rounded-[1em] overflow-hidden relative group p-2 z-0">
                     <div
                         class="circle absolute h-[5em] w-[5em] -top-[4em] -right-[4em] rounded-full bg-[#ffa500] group-hover:scale-[800%] duration-500 z-[-1] op">
@@ -103,7 +107,7 @@
                     <h5>Total Salary</h5>
                     <p id="totalSalary">0</p>
                 </div>
-                <div id="genderDistribution"
+                <div data-aos="zoom-in" data-aos-duration="2000" id="genderDistribution"
                     class=" data-card div h-[5.5em] w-[16em] bg-white m-auto rounded-[1em] overflow-hidden relative group p-2 z-0">
                     <div
                         class="circle absolute h-[5em] w-[5em] -top-[4em] -right-[4em] rounded-full bg-[#FFa500] group-hover:scale-[800%] duration-500 z-[-1] op">
@@ -111,7 +115,7 @@
                     <h5>Gender Distribution</h5>
                     <p id="genderData">M: 0 | F: 0 | O: 0</p>
                 </div>
-                <div id="departmentDistribution"
+                <div data-aos="zoom-in" data-aos-duration="2000" id="departmentDistribution"
                     class=" data-card div h-[5.5em] w-[20em] bg-white m-auto rounded-[1em] overflow-hidden relative group p-2 z-0">
                     <div
                         class="circle absolute h-[8em] w-[8em] -top-[8em] -right-[8em] rounded-full bg-[#ffa500] group-hover:scale-[800%] duration-500 z-[-1] op">
@@ -121,39 +125,42 @@
                 </div>
             </div>
         </div>
- 
+
         <div class="container-fluid1 pb-3 mx-4">
             <!-- graph -->
-            <div class="canvas-parent">
+            <div class="canvas-parent" data-aos="zoom-in" data-aos-duration="2000">
                 <canvas id="employeeChart"></canvas>
             </div>
             <div class=" list">
                 <div class="main-cards">
-                    <div class="card rounded-[1em]" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="card rounded-[1em]" data-aos="zoom-in" data-aos-duration="2000">
                         <h5 class="card-title rounded-[0.9em]">Sales</h5>
                         <div class="img-box"><img src="./src/images/graph_13601356.png" class="card-img-top"
                                 alt="sales png" style="padding: 20px;"></div>
-                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button" data-department="Sales">View
+                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button"
+                            data-department="Sales">View
                             Details</button>
                     </div>
-                    <div class="card rounded-[1em]" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="card rounded-[1em]" data-aos="zoom-in" data-aos-duration="2000">
                         <h5 class="card-title rounded-[0.9em] ">Technical</h5>
                         <div class="img-box"><img src="./src/images/cms-icon-compute.png" class="card-img-top"
                                 alt="sales png" style="opacity: 70%;"></div>
-                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button" data-department="Technical">View
+                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button"
+                            data-department="Technical">View
                             Details</button>
                     </div>
                 </div>
                 <div class="main-cards mt-3">
-                    <div class="card rounded-[1em]" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="card rounded-[1em]" data-aos="zoom-in" data-aos-duration="2000">
                         <h5 class="card-title rounded-[0.9em] ">Telecalling</h5>
                         <div class="img-box"><img src="./src/images/telemarketer_1597175.png" class="card-img-top"
                                 alt="sales png">
                         </div>
-                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button" data-department="Telecalling">View
+                        <button class="btn view-btn bg-[#ff5800]" id="viewBtn" type="button"
+                            data-department="Telecalling">View
                             Details</button>
                     </div>
-                    <div class="card rounded-[1em]" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <div class="card rounded-[1em]" data-aos="zoom-in" data-aos-duration="2000">
                         <h5 class="card-title rounded-[0.9em] ">Human Resource</h5>
                         <div class="img-box"><img src="./src/images/hr-manager_7376276.png" class="card-img-top"
                                 alt="sales png"></div>

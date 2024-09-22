@@ -6,24 +6,62 @@
 
 @font-face {
     font-family: 'Neue Machina';
-    src: url(../animated-404-page-main/assets/font/NeueMachina-Regular.woff);
+    src: url(/animated-404-page-main/assets/font/NeueMachina-Ultrabold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url(/animated-404-page-main/assets/font/NeueMachina-Regular.otf);
     font-weight: normal;
 }
 
 body {
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
-
-    background-color: #0d6efd;
+    width: 100%;
     padding: 10px 20px;
     font-family: 'Neue Machina';
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar a {
     text-decoration: none;
+    color: black;
+}
+
+.orgButton {
+    background-color: #ffffff00;
+    color: #414141;
+    width: 9em;
+    height: 2.3em;
+    border: orangered 0.2em solid;
+    border-radius: 11px;
+    transition: all 0.6s ease;
+}
+
+.orgButton:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #ffa500;
+    border: 1.5px solid orangered;
 }
 
 .navbar-brand {
@@ -31,31 +69,36 @@ body {
     font-size: 25px;
 }
 
-.employee-data img {
-    height: 35px;
-    width: 35px;
-    border: 1.5px solid rgb(0, 0, 0);
-    border-radius: 50%;
+.tbl-box {
+    width: 95%;
+    margin: 70px 0 30px 0px;
+    background-color: orangered;
+    border: 1px solid orangered;
+    border-radius: 12px;
+    padding: 0 2em;
 }
 
 h2 {
+    font-family: Neue Machina;
+    background-color: #ffa500;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 1% 30%;
+    padding: 5px 0;
     font-size: 1.5rem;
+    border-radius: 12px;
 }
 
-.tbl-box {
-    margin: 20px auto;
-    width: 80%;
-    /* Adjust table width as needed */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    overflow-x: auto;
+.employee-data img {
+    height: 35px;
+    width: 35px;
+    border: 1.5px solid orangered;
+    border-radius: 50%;
 }
 
 table {
     width: 100%;
+    background-color: whitesmoke;
+    border-radius: 12px;
     table-layout: fixed;
     border-collapse: collapse;
 }
@@ -66,9 +109,12 @@ td {
     text-align: left;
     vertical-align: middle;
     word-wrap: break-word;
+    overflow: auto;
 }
 
-.avatar-th {
+.avatar-th,
+.salary-th,
+.action-th {
     width: 10%;
 }
 
@@ -80,16 +126,7 @@ td {
     width: 15%;
 }
 
-.salary-th {
-    width: 10%;
-}
-
-.action-th {
-    width: 12%;
-}
-
 .act-btn {
-    background-color: bisque;
     display: none;
 }
 
@@ -101,146 +138,20 @@ td {
     display: block;
 }
 
-/*  no data*/
-
+/* no data */
 .no-data {
     text-align: center;
     margin-top: 20px;
     color: #d9534f;
 }
-/* no data end */
 
-@media (max-width: 1024px) {
-    .navbar-brand {
-        font-size: 1.25rem;
-    }
-
-    h2 {
-        font-size: 1.25rem;
-    }
-
-    .tbl-box {
-        width: 100%;
-    }
-
-    .avatar-th {
-        width: 10%;
-    }
-
-    .name-th {
-        width: 20%;
-    }
-
-    .contact-th {
-        width: 16%;
-    }
-
-    .salary-th {
-        width: 10%;
-    }
-
-    .action-th {
-        width: 14%;
-    }
+/* Modal styling */
+.add-emp-box {
+    background-color: #67676740;
+    backdrop-filter: blur(2px);
 }
-
-@media (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-    }
-
-    .tbl-box {
-        width: 100%;
-    }
-
-    .avatar-th {
-        width: 7%;
-    }
-
-    .name-th {
-        width: 15%;
-    }
-
-    .contact-th {
-        width: 16%;
-    }
-
-    .salary-th {
-        width: 10%;
-    }
-
-    .action-th {
-        width: 14%;
-    }
-}
-
-@media (max-width: 576px) {
-
-    body{
-        overflow-x: hidden;
-    }
-
-    table thead {
-        display: none;
-    }
-
-    table tbody tr {
-        width: 117% !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-bottom: 12px;
-        border: 2px solid #a5a5a5;
-        border-radius: 8px;
-        overflow-x: hidden;
-    }
-
-    table tbody td {
-        display: flex;
-        justify-content: space-between;
-        padding: 5px;
-    }
-
-    table tbody td::before {
-        content: attr(data-label);
-        font-weight: bold;
-    }
-
-    table tbody td:last-child {
-        justify-content: center;
-    }
-
-    .navbar-brand {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    .tbl-box {
-        width: 85%;
-    }
-
-    .employee-data img {
-        height: 30px;
-        width: 30px;
-    }
-}
-
-
 
 /* loader */
-
 .loader {
     position: absolute;
     display: none;
@@ -250,16 +161,142 @@ td {
     aspect-ratio: 2;
     border: 10px solid #ffffff;
     box-sizing: border-box;
-    background: 
-      radial-gradient(farthest-side,#000000 90%,#fff) left/20px 20px,
-      radial-gradient(farthest-side,#000000 90%,#fff) left/20px 20px,
-      radial-gradient(farthest-side,#000000 90%,#fff) center/20px 20px,
-      radial-gradient(farthest-side,#000000 90%,#fff) right/20px 20px,
-      #000000;
+    background:
+        radial-gradient(farthest-side, #000000 90%, #fff) left/20px 20px,
+        radial-gradient(farthest-side, #000000 90%, #fff) left/20px 20px,
+        radial-gradient(farthest-side, #000000 90%, #fff) center/20px 20px,
+        radial-gradient(farthest-side, #000000 90%, #fff) right/20px 20px,
+        #000000;
     background-repeat: no-repeat;
     filter: blur(4px) contrast(10);
     animation: l14 1s infinite;
-  }
-  @keyframes l14 {
-    100%  {background-position:right,left,center,right}
-  }
+}
+
+@keyframes l14 {
+    100% {
+        background-position: right, left, center, right;
+    }
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet screens */
+@media (max-width: 992px) {
+
+    .navbar {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .orgButton {
+        width: 20%;
+    }
+
+    .tbl-box {
+        margin: 80px 0;
+        padding: 0 1em;
+    }
+
+    h2 {
+        margin: 2% 27%;
+        font-size: 1.3rem;
+    }
+
+    table th, table td {
+        padding: 8px;
+        overflow-wrap: break-word;
+    }
+
+   
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .orgButton {
+        width: 30%;
+    }
+
+    h2 {
+        margin: 3% 25%;
+        font-size: 1.1rem;
+    }
+
+    .tbl-box {
+        width: 100%;
+        padding: 0 1em;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    .avatar-th,
+    .salary-th,
+    .action-th {
+        width: 10%;
+    }
+
+    .name-th, .contact-th {
+        width: 15%;
+    }
+
+    
+}
+
+
+/* small Mobile screens */
+@media (max-width: 480px){
+
+    .navbar {
+        padding: 15px 5px;
+        flex-direction: column;
+    }
+
+    .orgButton {
+        width: 40%;
+    }
+
+    h2 {
+        margin: 3% 15%;
+        font-size: 1.1rem;
+    }
+
+    .tbl-box {
+        width: 100%;
+        padding: 0 1em;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+
+    tbody tr{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .avatar-th,
+    .salary-th,
+    .action-th {
+        width: 100%;
+    }
+
+    .name-th, .contact-th {
+        width: 100%;
+    }
+
+}

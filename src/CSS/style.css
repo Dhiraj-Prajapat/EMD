@@ -79,7 +79,7 @@ nav a:hover {
     background-color: #ffffff00;
     color: #414141;
     width: 9em;
-    height: 2.9em;
+    height: 2.3em;
     border: orangered 0.2em solid;
     border-radius: 11px;
     transition: all 0.6s ease;
@@ -109,7 +109,7 @@ nav a:hover {
 .navigation {
     height: 100vh;
     width: 250px;
-    background-color: rgba(36, 36, 36, 0.936);
+    background-color: rgba(49, 49, 49, 0.885);
     z-index: 20;
     position: fixed;
     top: 0;
@@ -294,7 +294,7 @@ canvas {
 
 .card-title {
     color: rgb(50, 50, 50);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     border: 1px solid orangered;

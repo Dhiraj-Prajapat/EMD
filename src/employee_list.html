@@ -11,15 +11,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+
+    <nav class="navbar">
         <div class="container-fluid">
             <a href="../index.html"><span class="navbar-brand mb-0 h1">Employee List</span></a>
-            <button class="btn btn-outline-light" onclick="window.location.href='../index.html'">Back to Home</button>
+            <button class="orgButton" onclick="window.location.href='../index.html'">Back to Home</button>
         </div>
     </nav>
+
     <div class="tbl-box">
         <h2 id="department-name"></h2>
-
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -38,14 +39,14 @@
         </table>
         <!-- loader -->
         <div id="loader" class="loader"></div>
-          <!-- No Data Message -->
-          <div id="no-data" class="no-data" style="display: none;">
+        <!-- No Data Message -->
+        <div id="no-data" class="no-data" style="display: none;">
             <h5>No employees found. Please add employees.</h5>
         </div>
     </div>
 
     <!-- Edit Employee Modal -->
-    <div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel"
+    <div class="modal fade add-emp-box" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -60,15 +61,14 @@
                             <input type="text" class="form-control" id="editEmployeeName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editEmployeeEmail" class="form-label">Employee Email</label>
+                            <label for="editEmployeeEmail" class="form-label"> Email</label>
                             <input type="email" class="form-control" id="editEmployeeEmail" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editEmployeeContact" class="form-label">Employee Contact</label>
+                            <label for="editEmployeeContact" class="form-label"> Contact</label>
                             <input type="tel" class="form-control" id="editEmployeeContact" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="editEmployeeGender" class="form-label">Employee Gender</label><br>
+                        <div class="mb-3" <label for="editEmployeeGender" class="form-label"> Gender</label><br>
                             <select name="gender" id="editEmployeeGender" required>
                                 <option value="">Select Gender</option>
                                 <option value="male">Male</option>
@@ -77,11 +77,11 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="editEmployeeSalary" class="form-label">Employee Salary</label>
+                            <label for="editEmployeeSalary" class="form-label"> Salary</label>
                             <input type="number" class="form-control" id="editEmployeeSalary" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editEmployeeDepartment" class="form-label">Employee Department</label>
+                            <label for="editEmployeeDepartment" class="form-label"> Department</label>
                             <select class="form-control" id="editEmployeeDepartment" required>
                                 <option value="Sales">Sales</option>
                                 <option value="Technical">Technical</option>
@@ -99,7 +99,7 @@
     <script src="https://kit.fontawesome.com/d81ac8fe56.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="./JavaScript/employee_list.js"></script>
 </body>
 
