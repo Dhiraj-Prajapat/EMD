@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     function genderImg() {
                         let img;
                         if (employee.gender === "male") {
-                            img = `https://avatar.iran.liara.run/public/boy?username=[${employee.name}]`;
+                            img = `https://avatar.iran.liara.run/username?username=[${employee.name}]`;
                         } else if (employee.gender === "female") {
                             img = `https://avatar.iran.liara.run/public/girl?username=[${employee.name}]`;
                         } else {
